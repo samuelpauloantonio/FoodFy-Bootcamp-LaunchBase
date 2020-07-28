@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="um site completo para uma empresa de receitas chamada Foodfy." />
+  <meta name="keywords" content="site, receitas, Foodfy" />
+  <meta name="author" content="Samuel Paulo António || Mayk Brito " />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/style.css" />
+  {% block title_homepage %} {% endblock %}
+  {% block title_sobre %} {% endblock %}
+  {% block title_receitas %} {% endblock %}
+
+</head>
+
+<body>
+  <header id="page_home">
+    <div class="container">
+      <nav>
+        <div class="logo" >
+          <img src="/logo.png" alt="img_logo" />
+        </div>
+        <ul>
+          <li>
+            <a href="/sobre">Sobre</a>
+          </li>
+          <li>
+            <a href="/receitas">Receitas</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!--container-->
+  </header>
+
+  {% block content_homepage %}{% endblock %}
+
+  {% block content_sobre %}{% endblock %}
+
+  {% block content_receitas %}{% endblock %}
+
+
+
+
+
+
+  <footer class="footer_for_home footer_receitas">
+    <span>Todos direitos reservados, receitas Foodfy.</span>
+  </footer>
+
+   <script src="/modal.js"></script>
+</body>
+
+</html>

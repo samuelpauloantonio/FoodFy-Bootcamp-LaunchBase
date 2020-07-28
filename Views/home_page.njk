@@ -1,0 +1,97 @@
+{% extends "layout_nunjucks.njk" %}
+
+{% block title_homepage %} 
+<title>Home Page</title>
+{% endblock %}
+{% block content_homepage %} 
+  <div class= "overlay_relative"> 
+  <section class="banner_Main">
+    <div class="container">
+      <div class="background_pink">
+        <div class="info_about">
+          <h2>
+            As melhores receitas
+          </h2>
+          <p>
+            Aprenda a construir os melhores pratos com receitas criadas
+            por profissionais do mundo inteiro
+          </p>
+        </div>
+        <!--info_Main-->
+        <div class="img_cook">
+          <img src="/chef.png" alt="cook">
+        </div>
+      </div>
+      <!--Background_pink-->
+    </div>
+  </section>
+  <article class="mais_acessadas">
+    <div class="container">
+      <h2>Mais acessados</h2>
+      <div class="menu">
+        <div class="menu_single">
+          <img src="/burger.png" alt="assinhas" />
+          <div class="title_menu">
+            <h2>Triplo bacon burger </h2>
+            <p>por Jorge Relato</p>
+          </div>
+        </div> 
+
+        <div class="menu_single">
+          <img src="/pizza.png" alt="assinhas" />
+          <div class="title_menu">
+            <h2>Pizza 4 Estações </h2>
+            <p>por fabiana Melo</p>
+          </div>
+        </div> 
+
+        <div class="menu_single">
+          <img src="/espaguete.png" alt="assinhas" />
+          <div class="title_menu">
+            <h2>Espaguete a alho </h2>
+            <p>por Júlia Kinoto</p>
+          </div>
+        </div> 
+        <div class="menu_single">
+          <img src="/lasanha.png" alt="assinhas" />
+          <div class="title_menu">
+            <h2>Lasanha mac n´ classe </h2>
+            <p>por Juliano Vieira</p>
+          </div>
+        </div> 
+
+        <div class="menu_single">
+          <img src="/doce.png" alt="assinhas" />
+          <div class="title_menu">
+            <h2>Docinho de pão-do-céu </h2>
+            <p>por Ricardo de Golvea</p>
+          </div>
+        </div> 
+
+        <div class="menu_single">
+          <img src="/asinhas.png" alt="assinhas" />
+          <div class="title_menu">
+            <h2> Asinhas de frango ao barbecue</h2>
+            <p>por Vania Steroski</p>
+          </div>
+        </div> 
+      </div><!--menu-->
+    </div>
+  </article>
+  <section class="modal  ">
+    <div class="overlay"></div>
+      <div class="container">
+        <div class="img_food">
+          <img src="/asinhas.png" alt="food">
+        </div>
+
+        <div class="info_food">
+          <h2>asinhas de frango ao barbecue</h2>
+          <p>por Vania Steroski</p>
+          <p class="close"> Fechar modal</p>
+        </div>
+      </div>
+     </div> 
+  </section>
+
+  {% endblock %}

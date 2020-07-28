@@ -1,0 +1,23 @@
+{
+  "name": "projectos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "Foodfy",
+    "recitas"
+  ],
+  "author": "Samuel Paulo António",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nunjucks": "^3.2.2"
+  },
+  "devDependencies": {
+    "nodemo": "^1.0.0",
+    "nodemon": "^2.0.4"
+  }
+}
