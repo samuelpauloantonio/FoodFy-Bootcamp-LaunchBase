@@ -13,15 +13,15 @@ for(let menu of single_menu){
     modal.classList.add("active")
 
     const srcImg =  menu.querySelector("img").getAttribute("src")
+    modal.querySelector("img").src= `${srcImg}`
 
     const title = menu.querySelector("h2").textContent
-
-    const author2 = menu.querySelector("p.author").textContent
-
     modal.querySelector("h2").innerText = `${title}`
-    modal.querySelector("p.author2").innerText = `${author2}`
 
-    modal.querySelector("img").src= `${srcImg}`
+    const author = menu.querySelector("p.author").textContent
+    modal.querySelector("p.author2").innerText = `${author}`
+
+   
   })
 }
 
