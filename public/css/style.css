@@ -277,11 +277,16 @@ section.inf_foodfy .sobre_foodfy {
   color: #999999;
   cursor: pointer;
   padding-top: 60px;
+  border-bottom: 2px dotted rgb(167, 16, 6);
 }
 
 .info_food p.close:hover{
-  color: #3a3232;
+  color: rgb(167, 16, 6);
   transition: 700ms;
+}
+
+img{
+  cursor:pointer;
 }
 
 /*=== MODAL ACTIVE ===*/

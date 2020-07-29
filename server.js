@@ -1,11 +1,12 @@
 const express = require("express")
 const nunjucks = require("nunjucks")
-const menu = require("./data_server")
+const data_receitas = require("./data_server")
+const data_home = require("./data_Home_server")
 
 const server = express()
 
 server.get("/", function(req , res){
-  return  res.render("home_page", {menu_single2 : menu})
+  return  res.render("home_page", {menu_single : data_home})
 })
 
 server.get("/sobre", function(req, res){
@@ -14,7 +15,7 @@ server.get("/sobre", function(req, res){
 
 
 server.get("/receitas", function(req, res){
-  return res.render("receitas",{menu_single2 : menu })
+  return res.render("receitas",{menu_single2 : data_receitas })
 })
 
 

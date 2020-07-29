@@ -12,9 +12,9 @@
  
     <div class="menu">
       {% for  menu_main in menu_single2 %}
-      <div class="menu_single">
+      <div class="menu_single" id= "{{menu_main.id}} ">
         <img src=" {{menu_main.img_food}} " alt="assinhas" />
-        <div class="title_menu">
+        <div class="{{menu_main.title}} ">
           <h2>{{menu_main.title}} </h2>
           <p>{{menu_main.author}} </p>
         </div>
@@ -28,11 +28,11 @@
 
 </article>
 
-<section class="modal  ">
+<section class="modal ">
     <div class="overlay"></div>
       <div class="container">
         <div class="img_food">
-          <img src="/asinhas.png" alt="food">
+          <img src="" alt="food">
         </div>
 
         <div class="info_food">
