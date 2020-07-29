@@ -12,6 +12,28 @@
 * EXPRESS and
 * Nunjucks tamplete engines
 
+
+### Demonstration : Home Page
+
+![home page](https://github.com/samuelpauloantonio/FoodFy-Bootcamp-LaunchBase/blob/master/public/img/home.png?raw=true)
+
+
+
+
+### Demonstration : Recipes page
+
+
+![Recipes page](https://github.com/samuelpauloantonio/FoodFy-Bootcamp-LaunchBase/blob/master/public/img/receitas.png?raw=true)
+
+
+
+### and Demonstration : Modal 
+
+![Modal](https://github.com/samuelpauloantonio/FoodFy-Bootcamp-LaunchBase/blob/master/public/img/modal.png?raw=true)
+
+
+
+
 #### To open the site just download the Repository and in the terminal run 
 
 npm start
