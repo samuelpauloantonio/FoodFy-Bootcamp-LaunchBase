@@ -1,22 +1,25 @@
 {% extends "layout.njk" %}
 
-{% block title_receitas %}
-  <title>Receitas</title>
-{% endblock %}
+{% block style_separado %}
+   <link rel="stylesheet" href="/style-edit.css">
+{%endblock%}
+
 
 {% block content %}
 
   <div class="container container_margin">
 
     
-    <form action="/admin/recipe" method="post" class="form">
+    <section class="content-form">
+      <form action="/admin/recipe" method="post" class="form">
       <header class="header_form">
-        <h1>Criando receitas</h1>
+        <h2>Criando receitas</h2>
         <button class="button">Salvar a receita</button>
       </header>
       
         {% include "recipe/fields.njk" %}
     </form>
+    </section>
 
   </div>
   

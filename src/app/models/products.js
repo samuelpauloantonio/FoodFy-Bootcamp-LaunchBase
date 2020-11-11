@@ -13,7 +13,7 @@ module.exports = {
                 description,
                 quantity,
                 status,
-                Old_price,
+                old_price,
                 price,
                 url_image
             )VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11)
@@ -30,7 +30,7 @@ module.exports = {
             data.description,
             data.quantity,
             data.status || 1,
-            data.Old_price || data.price,
+            data.old_price || data.price,
             data.price || 100,
             data.url_image,
         ];
@@ -62,7 +62,7 @@ module.exports = {
                 description = ($6),
                 quantity = ($7),
                 status = ($8),
-                Old_price = ($9),
+                old_price = ($9),
                 price = ($10),
                 url_image  = ($11)
 
@@ -80,7 +80,7 @@ module.exports = {
             data.description,
             data.quantity,
             data.status ,
-            data.Old_price,
+            data.old_price,
             data.price || 100,
             data.url_image,
             data.id

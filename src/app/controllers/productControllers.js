@@ -1,5 +1,6 @@
 
 const Product = require('../models/products')
+const {formatPrice} = require('../../lib/utils')
 
 module.exports  = {
 
@@ -35,6 +36,9 @@ module.exports  = {
     if(!product) return res.send('Product Not-Found To  Edit')
 
 
+    product.price = formatPrice(product.price)
+    product.Old_price = formatPrice(product.Old_price)
+
     return res.render('recipe/edit', {product})
   },
 
@@ -46,6 +50,9 @@ module.exports  = {
 
     if(!product) return res.send('Product Not-Found To  show')
 
+
+    product.price = formatPrice(product.price)
+    product.Old_price = formatPrice(product.Old_price)
 
     return res.render('recipe/show', {product})
   },
@@ -61,8 +68,18 @@ module.exports  = {
   }
 
 
-   await Product.update(req.body)
 
+
+   req.body.price  = req.body.price.replace(/\D/g,"")
+
+   if(req.body.old_price != req.body.price) {
+
+     const oldProduct = await Product.find(req.body.id)
+
+     req.body.old_price = oldProduct.rows[0].price
+
+   }
+   await Product.update(req.body)
   
   return res.redirect(`/admin/recipe/${req.body.id}/edit`)
   },

@@ -39,6 +39,20 @@
  
         <p> <a href="http://">Adicionar novo passo </a> </p>
    
+
+    <div class="products_info">
+        <h2>Valor</h2>
+        <input type="text"
+         name="price" 
+         placeholder="Estoque Disponivel"
+          value ="{{product.price}}"
+          onkeydown = "Mask.apply(this, 'formatAOA')"
+         />
+
+         {% if product.old_price %}
+             <input type="hidden" name="{{product.old_price}}">
+         {% endif %}
+    </div>
     <div class="products_info">
         <h2>Quantidade</h2>
         <input type="text"
