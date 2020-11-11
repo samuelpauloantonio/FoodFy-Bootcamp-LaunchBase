@@ -1,0 +1,35 @@
+{% extends "layout.njk" %}
+
+
+{% block content %}
+
+   <div class="container container_margin ">
+
+      <form method="POST" action="/admin/recipe?_method=PUT" >
+         
+         <header class="header_form-edit">
+            <h2>Editando  receitas</h2>
+            <div class="button_form">
+             <button type="submit" class="button">Salvar receita</button>
+             <!-- <button class="button">Deletar</button> -->
+            </div>
+         </header>
+
+            <div class="fields">
+          {% include 'recipe/fields.njk'%}
+
+            </div>
+
+         <input type="hidden" name="id" value="{{product.id}}">
+      </form>
+
+      <form  method="post"  action="/admin/recipe?_method=DELETE"  >
+
+         <button type="submit" class="button" > Apagar a receita</button>
+
+         <input type="hidden" name="id" value="{{product.id}}">
+      </form>
+   </div>
+
+
+{% endblock %}

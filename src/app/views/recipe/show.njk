@@ -1,0 +1,62 @@
+{% extends "layout.njk" %}
+<!--style for page show -->
+{% block style_show %}
+<link rel="stylesheet" href="/style_show.css">
+{%endblock%}
+
+{%block content %}
+
+<div class="content-show">
+    <div class="container">
+        <header class="details">
+            <div class="title-recipe">
+                <h2>{{product.name}}</h2>
+            </div>
+
+            <a href="/admin/recipe/{{product.id}}/edit " class="button">Editar receita</a>
+        </header>
+
+
+        <div class="priveiw-recipe">
+            <div class="banner_Main">
+                <img src="/asinhas.png" alt="">
+            </div>
+
+            <div class="title-banner">
+                <h2>{{product.name}}</h2>
+                <p>Por Carlos Albino</p>
+            </div>
+        </div>
+
+        <div class="more-information">
+            <div>
+                <div class="title-info">
+                    <h2>Ingrediente</h2>
+                </div>
+                <div class="info-recipe">
+                    {{product.ingrediente}}
+                </div>
+            </div>
+
+            <div>
+                <div class="title-info">
+                    <h2>Modo de Preparo</h2>
+                </div>
+                <div class="info-recipe">
+                    {{product.preparo}}
+                </div>
+            </div>
+
+            <div>
+                <div class="title-info">
+                    <h2>informações adicionais</h2>
+                </div>
+                <div class="info-recipe">
+                    {{product.description}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

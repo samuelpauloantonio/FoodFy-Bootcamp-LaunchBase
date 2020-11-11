@@ -1,0 +1,23 @@
+{% extends "layout.njk" %}
+
+{% block title_receitas %}
+  <title>Receitas</title>
+{% endblock %}
+
+{% block content %}
+
+  <div class="container container_margin">
+
+    
+    <form action="/admin/recipe" method="post" class="form">
+      <header class="header_form">
+        <h1>Criando receitas</h1>
+        <button class="button">Salvar a receita</button>
+      </header>
+      
+        {% include "recipe/fields.njk" %}
+    </form>
+
+  </div>
+  
+{% endblock %}

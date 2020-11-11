@@ -1,0 +1,58 @@
+<div class="fieldsproducts">
+    <div class="products_info">
+        <h2>Image da receita</h2>
+        <input type="url"
+         name="url_image"
+          placeholder="https://" 
+          value ="{{product.url_image}}"
+          id=""
+          >
+    </div>
+    <div class="products_info">
+        <h2>Nome</h2>
+        <input type="text"
+         name="name"
+          placeholder="Nome do Produto" 
+          value ="{{product.name}}"
+          id=""
+          >
+    </div>
+    <div class="products_info">
+        <h2>Ingredientes</h2>
+        <input type="text" 
+        name="ingrediente" 
+        placeholder="Coloca os seus ingrediente"
+         value ="{{product.ingrediente}}"
+         >
+    </div>
+   
+        <p><a href="http://">Adicionar novo ingrediente </a></p>
+ 
+    <div class="products_info">
+        <h2>Modo de Preparo</h2>
+        <input type="text"
+         name="preparo" 
+         placeholder="Modo de Preparo"
+          value ="{{product.preparo}}"
+         >
+    </div>
+ 
+        <p> <a href="http://">Adicionar novo passo </a> </p>
+   
+    <div class="products_info">
+        <h2>Quantidade</h2>
+        <input type="text"
+         name="quantity" 
+         placeholder="Estoque Disponivel"
+          value ="{{product.quantity}}"
+         >
+    </div>
+    <div class="products_info">
+        <h2>Informações adicionais</h2>
+        <textarea name="description" id="" placeholder="Coloque mais informações">{{product.description}}</textarea>
+    </div>
+</div>
+
+
+
+
