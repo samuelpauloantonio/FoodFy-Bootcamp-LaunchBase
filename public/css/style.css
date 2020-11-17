@@ -1,3 +1,49 @@
+@font-face{
+  font-family: "Roboto";
+  src: url('./Roboto-Regular.ttf') 
+}
+/*MaterialIcons-Regular.ttf */
+
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url('./MaterialIcons-Regular.woff2') format('woff2'),
+    url('./MaterialIcons-Regular.woff') format('woff'),
+    url('./MaterialIcons-Regular.ttf') format('truetype');
+}
+
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+
+
 *{
   margin: 0;
   padding: 0;
@@ -184,7 +230,7 @@ footer .container{
   font-size: 16px;
   color: #111111;
 }
-.products_info > input{
+.products_info  input{
   width: 100%;
   margin: 10px 0;
   padding:8px 16px;
@@ -197,6 +243,11 @@ footer .container{
   font-size: 16px;
     border: 1px solid #efeefe;
 }
+.fieldsproducts   .products_info:first-of-type  input{
+  border: 0;
+}
+
+
 
 .products_info > textarea{
   width: 100%;
@@ -250,3 +301,92 @@ footer .container{
   background: rgb(228, 23, 23);
 }
 
+
+.photos{
+  width: 200px;
+  height: auto;
+  position: relative;
+  top: 0;
+  margin-bottom: 30px;
+
+}
+
+  .photos-input{
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    transform: translate(0 , -4px);
+    opacity: 0;
+    cursor: pointer;
+    z-index: 4;
+  }
+
+.photos p{
+  width: 100%;
+
+  top: 0;
+  left: 0;
+  background: #6558C3;
+  padding:8px 0;
+  color:white;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transform: translate(0 , 10px);
+  cursor: pointer;
+
+  border: 1px solid #cfcdcd;
+
+  overflow: hidden;
+  
+}
+
+
+.products_info .priview-photo {
+  width: 100%;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 20px;
+
+
+}
+
+
+.products_info .priview-photo  .photo-single {
+  position: relative;
+}
+.products_info .priview-photo  .photo-single img{
+  width:100%;
+  height: 150px;
+  object-fit: cover;
+}
+.products_info .priview-photo   .photo-single  > i{
+  position: absolute;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+
+  color: red;
+  font-size: 100px;
+
+  cursor: pointer;
+
+  opacity: 0;
+  transition: opacity ease-in 20ms;
+  
+
+}
+
+.products_info .priview-photo   .photo-single i:hover{
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.685);
+
+} 

@@ -1,12 +1,39 @@
 <div class="fieldsproducts">
     <div class="products_info">
+
         <h2>Image da receita</h2>
-        <input type="url"
-         name="url_image"
-          placeholder="https://" 
-          value ="{{product.url_image}}"
-          id=""
+
+        <div class="photos">
+            
+         <input type="file"
+         name="files"
+          value =""
+          class="photos-input"
+            multiple
+            accept="image/*"
+          onchange = "PhotosUpload.FilesInput(event)"
           >
+          <p>Selecione  até 4 Fotos </p>
+        </div>
+
+        <div class="priview-photo">
+           
+          {% if files %}
+               {% for image in files %}
+                <div class="photo-single" >
+                <img src="{{image.src}}" alt="{{image.name}}">
+                <i class="material-icons"
+                  onclick = "PhotosUpload.removeOldPhoto(event)"
+                
+                >close </i>
+            </div>
+           {% endfor %}
+             <input type="hidden" name="removed_files">
+
+          {% endif %}
+
+            
+        </div>
     </div>
     <div class="products_info">
         <h2>Nome</h2>

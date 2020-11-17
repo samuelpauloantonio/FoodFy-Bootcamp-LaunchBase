@@ -5,4 +5,4 @@ module.exports = {
             currency : 'AKZ'
         }).format(price / 100)
     }
-}
+} 
