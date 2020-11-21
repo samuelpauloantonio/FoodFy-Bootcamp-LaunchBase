@@ -104,14 +104,14 @@ module.exports  = {
 
     results  = await File.find(product.id)
 
-    let files =  results.rows
+    let images =  results.rows
 
-    files = files.map(file => ({
+    images = images.map(file => ({
       ...file,
       src :  `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
-    }))
+    }))//.filter((file, index )=> index > 2 ? false : true ) 
 
-    return res.render('recipe/show', {product, files})
+    return res.render('recipe/show', {product, images : images })
   },
 
 

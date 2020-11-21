@@ -35,9 +35,32 @@ header.details>a {
     margin-bottom: 50px;
 }
 
-.priveiw-recipe .banner_Main img {
+.priveiw-recipe .banner_Main .image-main >  img {
     width: 100%;
-    border-radius: 16px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.banner_Main .outhers-images {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.banner_Main .outhers-images .image-single > img {
+    width: 50px;
+    height: 49px;
+    object-fit: cover;
+    border-radius: 3.5px;
+    border-radius: 3,5px;
+    border: 1px solid #DDDDDD;
+}
+.banner_Main .outhers-images .image-single > img:hover{
+    opacity: 0.5;
+    cursor: pointer;
 }
 
 .priveiw-recipe .title-banner h2 {

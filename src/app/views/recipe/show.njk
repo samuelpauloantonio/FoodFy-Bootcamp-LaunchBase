@@ -19,7 +19,19 @@
 
         <div class="priveiw-recipe">
             <div class="banner_Main">
-                <img src="/asinhas.png" alt="">
+               
+                <div class="image-main">
+                     <img src="/asinhas.png" alt="">
+                </div>
+
+                <div class="outhers-images">
+                    
+                   {% for image in images %}
+                       <div class="image-single">
+                        <img src="{{image.src}}" alt="{{image.name}}" >
+                    </div>
+                   {% endfor %}
+                </div>
             </div>
 
             <div class="title-banner">
