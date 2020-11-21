@@ -1,29 +1,55 @@
 
 const Product = require('../models/products')
+const  categories = require('../models/categories')
 const {formatPrice} = require('../../lib/utils')
+
+
+
+
+ const File  = require('../models/file')
 
 module.exports  = {
 
 
 
-  create(req, res){
-    return res.render('recipe/create')
+   create(req, res){
+
+    categories.category().then( (results)=>{
+
+    const  categories = results.rows
+
+    return res.render('recipe/create', {categories})
+      
+    }).catch((err) =>{
+      throw new Error(err)
+    })
+   
   },
+
+
 
   async post(req, res){
 
     const keys = Object.keys(req.body)
 
     for(key of keys){
-      if(req.body[key] == "") return res.send("porfavor preencha o  campo" + " " + key)
+      if(req.body[key] == "") return res.send("porfavor preencha o  campo" + " " + key + req.files)
     }
 
+    if(req.files.length == 0) {
+      return res.send('please send one image')
+    }
 
     let results  =  await Product.create(req.body)
-
     const product_id = results.rows[0].id
 
-    return res.redirect('/admin/recipe/create')
+    
+
+    const AllPromiseProduct = req.files.map(file => File.create({...file, product_id}))
+  
+    await Promise.all(AllPromiseProduct)
+
+    return res.redirect(`/admin/recipe/${product_id}/edit`)
   },
 
 
@@ -39,7 +65,28 @@ module.exports  = {
     product.price = formatPrice(product.price)
     product.Old_price = formatPrice(product.Old_price)
 
-    return res.render('recipe/edit', {product})
+
+    results = await categories.category()
+ 
+    const category = results.rows 
+
+    
+   results = await File.find(product.id) 
+
+    let files = results.rows
+
+    files = files.map(file => ({
+      ...file,
+      src : `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
+    }))
+
+
+    return res.render('recipe/edit', {
+
+      categories : category,
+      product,
+      files
+    })
   },
 
   async show(req,  res){
@@ -54,17 +101,56 @@ module.exports  = {
     product.price = formatPrice(product.price)
     product.Old_price = formatPrice(product.Old_price)
 
-    return res.render('recipe/show', {product})
+
+    results  = await File.find(product.id)
+
+    let files =  results.rows
+
+    files = files.map(file => ({
+      ...file,
+      src :  `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
+    }))
+
+    return res.render('recipe/show', {product, files})
   },
 
 
  async  put(req, res){
 
 
+
+ 
   const keys = Object.keys(req.body)
 
   for(key of keys){
-    if(req.body[key] == "" && key != "id") return res.send("porfavor preencha o  campo" + " " + key)
+    if(req.body[key] == "" && key != "removed_files"){
+      return res.send("porfavor preencha o  campo" + " " + key)
+    }
+  }
+
+  
+
+  if(req.files != 0){
+
+    const  newPromiseFile  = req.files.map(file => 
+      File.create({...file, product_id : req.body.id }))
+
+      await Promise.all(newPromiseFile)
+    
+  }
+
+
+  if(req.body.removed_files){
+    const removed_files = req.body.removed_files.split(',')
+
+    const lastIndex = removed_files.length - 1
+
+    removed_files.splice(lastIndex, 1)
+
+    const allPromise = await removed_files.map(id => File.delete(id))
+
+    await Promise.all(allPromise)
+
   }
 
 
@@ -79,6 +165,13 @@ module.exports  = {
      req.body.old_price = oldProduct.rows[0].price
 
    }
+
+
+  
+
+
+
+
    await Product.update(req.body)
   
   return res.redirect(`/admin/recipe/${req.body.id}/edit`)
@@ -91,9 +184,6 @@ async delete(req, res){
 
   return res.redirect('/admin/recipe/create')
 },
-
-
-
 
 
 

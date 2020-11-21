@@ -22,7 +22,7 @@ server.use(urlencoded({extended : true }))
 
 server.use(express.static("src/lib"))
 server.use(express.static("public/css"))
-server.use(express.static("public/img"))
+server.use(express.static("public"))
 
 server.use(methodOverride('_method'))
 

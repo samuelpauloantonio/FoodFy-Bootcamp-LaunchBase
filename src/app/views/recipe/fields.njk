@@ -1,99 +1,94 @@
 <div class="fieldsproducts">
+
+    <div class="products_info">
+        <h2> Categorias </h2>
+        <select name ="category_id" id="select">
+            <option selected disabled>
+
+                Escolher Categoria
+
+            </option>
+            {% for  category in categories %}
+            <option value ="{{category.id}}" {% if product.category_id == category.id %} selected {% endif %}>
+                {{category.name}}
+            </option>
+
+            {% endfor %}
+        </select>
+        
+    </div>
+
     <div class="products_info">
 
         <h2>Image da receita</h2>
 
         <div class="photos">
-            
-         <input type="file"
-         name="files"
-          value =""
-          class="photos-input"
-            multiple
-            accept="image/*"
-          onchange = "PhotosUpload.FilesInput(event)"
-          >
-          <p>Selecione  até 4 Fotos </p>
+
+            <input type="file"
+             name="photos" 
+             class="photos-input" 
+             multiple
+              accept="image/*"
+              value = "{{files.name}}"
+                onchange="PhotosUpload.FilesInput(event)">
+            <p>Selecione até 4 Fotos </p>
         </div>
 
         <div class="priview-photo">
-           
-          {% if files %}
-               {% for image in files %}
-                <div class="photo-single" >
+
+            {% if files %}
+            {% for image in files %}
+            <div class="photo-single" id="{{image.id}}">
                 <img src="{{image.src}}" alt="{{image.name}}">
-                <i class="material-icons"
-                  onclick = "PhotosUpload.removeOldPhoto(event)"
-                
-                >close </i>
+                <i class="material-icons" onclick="PhotosUpload.removeOldPhotos(event)">close </i>
             </div>
-           {% endfor %}
-             <input type="hidden" name="removed_files">
+            {% endfor %}
 
-          {% endif %}
+            <input type="hidden" name="removed_files">
 
-            
+            {% endif %}
+
+
+
         </div>
     </div>
+
     <div class="products_info">
         <h2>Nome</h2>
-        <input type="text"
-         name="name"
-          placeholder="Nome do Produto" 
-          value ="{{product.name}}"
-          id=""
-          >
+        <input type="text" name="name" placeholder="Nome do Produto" value="{{product.name}}" id="">
     </div>
+
     <div class="products_info">
         <h2>Ingredientes</h2>
-        <input type="text" 
-        name="ingrediente" 
-        placeholder="Coloca os seus ingrediente"
-         value ="{{product.ingrediente}}"
-         >
+        <input type="text" name="ingrediente" placeholder="Coloca os seus ingrediente" value="{{product.ingrediente}}">
     </div>
-   
-        <p><a href="http://">Adicionar novo ingrediente </a></p>
- 
+
+    <p><a href="http://">Adicionar novo ingrediente </a></p>
+
     <div class="products_info">
         <h2>Modo de Preparo</h2>
-        <input type="text"
-         name="preparo" 
-         placeholder="Modo de Preparo"
-          value ="{{product.preparo}}"
-         >
+        <input type="text" name="preparo" placeholder="Modo de Preparo" value="{{product.preparo}}">
     </div>
- 
-        <p> <a href="http://">Adicionar novo passo </a> </p>
-   
+
+    <p> <a href="http://">Adicionar novo passo </a> </p>
+
 
     <div class="products_info">
         <h2>Valor</h2>
-        <input type="text"
-         name="price" 
-         placeholder="Estoque Disponivel"
-          value ="{{product.price}}"
-          onkeydown = "Mask.apply(this, 'formatAOA')"
-         />
+        <input type="text" name="price" placeholder="Estoque Disponivel" value="{{product.price}}"
+            onkeydown="Mask.apply(this, 'formatAOA')" />
 
-         {% if product.old_price %}
-             <input type="hidden" name="{{product.old_price}}">
-         {% endif %}
+        {% if product.old_price %}
+        <input type="hidden" name="product.old_price" value="{{product.old_price}}}">
+        {% endif %}
     </div>
     <div class="products_info">
         <h2>Quantidade</h2>
-        <input type="text"
-         name="quantity" 
-         placeholder="Estoque Disponivel"
-          value ="{{product.quantity}}"
-         >
+        <input type="text" name="quantity" placeholder="Estoque Disponivel" value="{{product.quantity}}">
     </div>
     <div class="products_info">
         <h2>Informações adicionais</h2>
         <textarea name="description" id="" placeholder="Coloque mais informações">{{product.description}}</textarea>
     </div>
-</div>
 
-
-
-
+</div><!-- fields -->

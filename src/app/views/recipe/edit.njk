@@ -9,7 +9,7 @@
 
    <div class="container container_margin ">
       <section class="content-form">
-         <form method="POST" action="/admin/recipe?_method=PUT" >
+         <form method="POST" action="/admin/recipe?_method=PUT" enctype="multipart/form-data"  >
          
          <header class="header_form-edit">
             <h2>Editando  receitas</h2>
@@ -28,7 +28,6 @@
       </form>
 
       <form  method="post"  action="/admin/recipe?_method=DELETE"  >
-
          <button type="submit" class="button" > Apagar a receita</button>
          <div class="clear"></div>
          <input type="hidden" name="id" value="{{product.id}}">

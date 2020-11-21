@@ -155,19 +155,16 @@ const PhotosUpload = {
 
     removeOldPhotos(event){
 
-        const photoDiv = event.target.parentNode
+        const photoSingle = event.target.parentNode
+
+        if(photoSingle){
+            const input_hidden = document.querySelector('input[name="removed_files"]')
             
-            if(photoDiv){
-                 const removedFiles = document.querySelector('input[name="remove_files"]')
-
-                 if(removedFiles){
-
-                     removedFiles.value += `${photoDiv.id}`
-                 }
+            if(input_hidden){
+                input_hidden.value += `${photoSingle.id},`
             }
-
-            photoDiv.remove()
-
+        }
+        photoSingle.remove()
            
         }
 

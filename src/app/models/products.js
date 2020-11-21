@@ -20,18 +20,20 @@ module.exports = {
             RETURNING id
 
         `;
-
+            
+        data.price = data.price.replace(/\D/g,"")
+        
         const values = [
-            data.category_id || 1,
-            data.users_id || 1,
+            data.category_id,
+            data.users_id,
             data.name,
             data.ingrediente,
             data.preparo,
             data.description,
             data.quantity,
-            data.status || 1,
+            data.status,
             data.old_price || data.price,
-            data.price || 100,
+            data.price,
             data.url_image,
         ];
 
@@ -70,18 +72,19 @@ module.exports = {
              
         `
 
-
+        data.price = data.price.replace(/\D/g,"")
+       
         const values = [
-            data.category_id || 1,
-            data.users_id || 1,
+            data.category_id ,
+            data.users_id ,
             data.name,
             data.ingrediente,
             data.preparo,
             data.description,
             data.quantity,
             data.status ,
-            data.old_price,
-            data.price || 100,
+            data.old_price || data.price,
+            data.price,
             data.url_image,
             data.id
         ];
