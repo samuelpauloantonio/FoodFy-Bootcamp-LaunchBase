@@ -34,28 +34,26 @@
 
   <section class="allProducts">
       <div class="container">
-        <div class="products">
+        <div class="products"> 
         <h2>Últimos Recietas</h2>
 
         <div class="all-recipes">
-            <div class="recipe">
-              <img src="/asinhas.png" alt="" srcset="">
-              <h4>Lasanha</h4>
-              <p>AKZ 300.000 .00</p>
-              <a href="" class="button"> VER A RECEITA</a>
+            {% for recipe in products %}
+              <div class="recipe">
+              <img src="{{recipe.img if recipe.img else '//placehold.it/500x500'}}" alt="{{recipe.name}}" >
+
+              <h4>{{recipe.name}}</h4>
+
+               {% if recipe.oldPrice != recipe.price %}
+                <div class="old-price" >
+                        {{recipe.oldPrice}} 
+                    </div>
+              {% endif %}
+              <p>{{recipe.price}}</p>
+              <a href="/admin/recipe/{{recipe.id}}" class="button"> VER A RECEITA</a>
             </div>
-            <div class="recipe">
-              <img src="/asinhas.png" alt="" srcset="">
-              <h4>Lasanha</h4>
-              <p>AKZ 300.000 .00</p>
-              <a href="" class="button"> VER A RECEITA</a>
-            </div>
-            <div class="recipe">
-              <img src="/asinhas.png" alt="" srcset="">
-              <h4>Lasanha</h4>
-              <p>AKZ 300.000 .00</p>
-              <a href="" class="button"> VER A RECEITA</a>
-            </div>
+            {% endfor %}
+            
         </div>
       </div>
       </div>

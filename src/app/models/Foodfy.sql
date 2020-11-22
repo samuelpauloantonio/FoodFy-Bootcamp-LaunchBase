@@ -30,3 +30,27 @@ ALTER TABLE "products" ADD FOREIGN KEY ("category_id") REFERENCES "category" ("i
 
 
 ALTER TABLE "files" ADD FOREIGN KEY ("product_id") REFERENCES "products" ("id")
+
+
+/*FUNCTION PROCEDURE E TRIGGERS*/
+/*para pegar a data de actualizacao */
+
+CREATE FUNCTION setTime()
+returns trigger AS $$
+begin 
+
+NEW.update_at = now();
+
+return new;
+
+end;
+$$
+language plpgsql
+
+
+create Trigger set_timestamp 
+before update on products 
+
+for each Row 
+
+execute procedure setTime()

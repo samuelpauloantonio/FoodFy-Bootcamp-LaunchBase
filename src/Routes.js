@@ -1,12 +1,14 @@
 const express = require('express')
 const  routes = express.Router()
 
+
 const multer = require('./app/middleware/multer')
 
 const product = require('./app/controllers/productControllers')
+const HomeControllers = require('./app/controllers/HomeControllers')
 
 /* Method GET */
-routes.get('/', product.home)
+routes.get('/', HomeControllers.index)
 
 routes.get('/admin/recipe/create', product.create)
 

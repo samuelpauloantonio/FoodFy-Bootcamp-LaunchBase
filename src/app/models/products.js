@@ -1,6 +1,10 @@
 const BancodeDandos = require("../../config/conectionDB");
 
 module.exports = {
+
+    all(){
+        return BancodeDandos.query(`SELECT * FROM  products ORDER BY updated_at DESC`)
+    },
     create(data) {
         const query = `
             INSERT INTO products(
@@ -18,7 +22,7 @@ module.exports = {
                 url_image
             )VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11)
             RETURNING id
-
+ 
         `;
             
         data.price = data.price.replace(/\D/g,"")
