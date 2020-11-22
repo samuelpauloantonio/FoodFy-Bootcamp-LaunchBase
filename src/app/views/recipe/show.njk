@@ -21,14 +21,16 @@
             <div class="banner_Main">
                
                 <div class="image-main">
-                     <img src="/asinhas.png" alt="">
+                     <img src="{{files[0].src}}" alt="">
                 </div>
 
                 <div class="outhers-images">
                     
-                   {% for image in images %}
+                   {% for image in files %}
                        <div class="image-single">
-                        <img src="{{image.src}}" alt="{{image.name}}" >
+                        <img src="{{image.src}}" alt="{{image.name}}" 
+                        onclick = "SetImage.bannerMain(event)"
+                        >
                     </div>
                    {% endfor %}
                 </div>

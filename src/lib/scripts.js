@@ -175,3 +175,19 @@ const PhotosUpload = {
 }
 
 
+// Banner  Main 
+
+
+const SetImage = {
+    imageMain  : document.querySelector('.image-main > img'),
+
+    bannerMain(event){
+        
+        const {target} = event
+       
+        SetImage.imageMain.src = target.src
+
+    
+       
+    }
+}

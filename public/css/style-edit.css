@@ -10,10 +10,9 @@
     border: 1px solid #fefefe ;
     border-radius: 4px;
 
-
 }
 .content-form  form  header h2{
-    color: coral;
+    color:  rgb(7, 172, 134);
     font-size: 14px;
     line-height: 24px;
     letter-spacing: 0.7px;
@@ -27,3 +26,4 @@
     font-weight: bold;
     margin-bottom: 16px;
 }
+

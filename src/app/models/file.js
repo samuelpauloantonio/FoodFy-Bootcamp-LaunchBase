@@ -4,7 +4,7 @@ const fs = require('fs')
 
 module.exports = {
 
-    create({file, path, product_id}){
+    create({filename, path, product_id}){
         
         const query = `
             INSERT INTO  files (
@@ -16,7 +16,7 @@ module.exports = {
         `
 
         const values = [
-            file,
+            filename,
             path,
             product_id
         ]
