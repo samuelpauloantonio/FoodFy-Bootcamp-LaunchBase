@@ -1,10 +1,13 @@
 {% extends "layout.njk" %}
-
+{% block style_separado %}
+   <link rel="stylesheet" href="/style-home.css">
+{%endblock%}
 
 {% block content %}
 
   <div class="overlay_relative">
-    <section class="banner_Main">
+   <div class="container">
+     <section class="banner_Main">
       <div class="container">
         <div class="background_pink">
           <div class="info_about">
@@ -24,7 +27,38 @@
         <!--Background_pink-->
       </div>
     </section>
+   </div>
 
   </div>
+
+
+  <section class="allProducts">
+      <div class="container">
+        <div class="products">
+        <h2>Últimos Recietas</h2>
+
+        <div class="all-recipes">
+            <div class="recipe">
+              <img src="/asinhas.png" alt="" srcset="">
+              <h4>Lasanha</h4>
+              <p>AKZ 300.000 .00</p>
+              <a href="" class="button"> VER A RECEITA</a>
+            </div>
+            <div class="recipe">
+              <img src="/asinhas.png" alt="" srcset="">
+              <h4>Lasanha</h4>
+              <p>AKZ 300.000 .00</p>
+              <a href="" class="button"> VER A RECEITA</a>
+            </div>
+            <div class="recipe">
+              <img src="/asinhas.png" alt="" srcset="">
+              <h4>Lasanha</h4>
+              <p>AKZ 300.000 .00</p>
+              <a href="" class="button"> VER A RECEITA</a>
+            </div>
+        </div>
+      </div>
+      </div>
+  </section>
 
 {% endblock %}

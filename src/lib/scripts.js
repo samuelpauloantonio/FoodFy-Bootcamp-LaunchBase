@@ -1,3 +1,8 @@
+function redirect(){
+    return window.location = '/'
+}
+
+
 // MASCARA PARA MOEDA   
 
 
