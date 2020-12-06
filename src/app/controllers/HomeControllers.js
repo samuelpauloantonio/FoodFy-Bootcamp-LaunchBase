@@ -27,12 +27,12 @@ module.exports = {
 
             return product
 
-        }).filter((product, index )=> index > 2 ? false : true ) 
+        }).filter((product, index )=> index > 5 ? false : true ) 
 
         const  UltimoAddicionado = await Promise.all(modificationSeingleProducts)
 
         
-        console.log(UltimoAddicionado)
+ 
         return res.render('home/index', { products : UltimoAddicionado })
 
 

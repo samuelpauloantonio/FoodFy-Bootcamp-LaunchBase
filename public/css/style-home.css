@@ -67,6 +67,8 @@
 
   .all-recipes .recipe{
       display: grid;
+      height: 100%;
+      width: 100%;
   }
 
   .all-recipes .recipe img{
@@ -96,4 +98,13 @@
 
   .all-recipes .recipe a:hover{
     background:rgb(7, 172, 134) ;
+  }
+
+
+  .old-price{
+    color: rgba(149, 15, 15, 0.438);
+    margin: 4px 0;
+    padding: 0;
+    text-decoration: line-through;
+    font-size: 14px;
   }
