@@ -1,0 +1,34 @@
+{% macro products(name, products)%}
+
+
+ <section class="allProducts">
+      <div class="container">
+        <div class="products"> 
+      
+        {% if name %}
+              <h2>{{name}}</h2>
+        {% endif %}
+
+        <div class="all-recipes">
+            {% for recipe in products %}
+              <div class="recipe">
+              <img src="{{recipe.img if recipe.img else '//placehold.it/500x500'}}" alt="{{recipe.name}}" >
+
+              <h4>{{recipe.name}}</h4>
+
+               {% if recipe.oldPrice != recipe.price %}
+                <div class="old-price" >
+                        {{recipe.oldPrice}} 
+                    </div>
+              {% endif %}
+              <p>{{recipe.price}}</p>
+              <a href="/admin/recipe/{{recipe.id}}" class="button"> VER A RECEITA</a>
+            </div>
+            {% endfor %}
+            
+        </div>
+      </div>
+      </div>
+  </section>
+    
+{% endmacro %}

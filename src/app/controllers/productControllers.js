@@ -1,7 +1,7 @@
 
 const Product = require('../models/products')
 const  categories = require('../models/categories')
-const {formatPrice} = require('../../lib/utils')
+const { formatPrice } = require('../../lib/utils')
 
 
 

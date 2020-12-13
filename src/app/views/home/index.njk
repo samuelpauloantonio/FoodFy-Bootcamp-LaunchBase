@@ -1,7 +1,7 @@
 {% extends "layout.njk" %}
-{% block style_separado %}
-   <link rel="stylesheet" href="/style-home.css">
-{%endblock%}
+
+
+{% import 'parts/session-products.njk' as section %}
 
 {% block content %}
 
@@ -30,33 +30,17 @@
    </div>
 
   </div>
+  
 
 
-  <section class="allProducts">
-      <div class="container">
-        <div class="products"> 
-        <h2>Mais Acessados</h2>
+{{section.products('Mas acessados', products)}}
 
-        <div class="all-recipes">
-            {% for recipe in products %}
-              <div class="recipe">
-              <img src="{{recipe.img if recipe.img else '//placehold.it/500x500'}}" alt="{{recipe.name}}" >
 
-              <h4>{{recipe.name}}</h4>
 
-               {% if recipe.oldPrice != recipe.price %}
-                <div class="old-price" >
-                        {{recipe.oldPrice}} 
-                    </div>
-              {% endif %}
-              <p>{{recipe.price}}</p>
-              <a href="/admin/recipe/{{recipe.id}}" class="button"> VER A RECEITA</a>
-            </div>
-            {% endfor %}
-            
-        </div>
-      </div>
-      </div>
-  </section>
+
+
+
+
+ 
 
 {% endblock %}
