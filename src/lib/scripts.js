@@ -32,7 +32,7 @@ const PhotosUpload = {
 
     files : [],
     priview : document.querySelector('.priview-photo'),
-    uploudLimit : 4,
+    uploudLimit : 5,
     input: "",
 
     FilesInput (event) {
@@ -61,7 +61,7 @@ const PhotosUpload = {
 
 
              const div = PhotosUpload.getContainer(image)
-
+ 
 
                 PhotosUpload.priview.appendChild(div)
             }
