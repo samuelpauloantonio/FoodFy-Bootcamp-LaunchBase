@@ -1,0 +1,108 @@
+.chefs .products_info:first-of-type{
+
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.chefs .photo {
+    width: 100px;
+    height: 100px;
+
+
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.chefs .photo-inputUSer {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: 1;
+
+    opacity: 0;
+
+    cursor: pointer;
+}
+
+
+  
+  .chefs .priview-photo-users{
+   width: 100%;
+   height: 100%;
+
+   position: relative;
+   top: 0;
+   left: 0;
+   background: rgba(179, 166, 166, 0.26);
+
+   z-index:0;
+   
+
+   border-radius: 50%;
+   
+
+   display: flex;
+   justify-content: center;
+    align-items: center;
+   
+  } 
+
+
+  .avatar-single {
+    
+    
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+  }
+
+  .avatar-single img{
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    object-fit: none;
+
+  }
+
+
+  
+  .chefs .priview-photo-users p{
+    position: absolute;
+    font-size: 10px;
+    top: 55%;
+    
+    
+  }
+  
+  .chefs   .avatar-single i{
+    width:100%;
+    height: 100%;
+    position: absolute;
+    left: 0%;
+    
+  
+    font-size: 70px;
+    color: blue;
+    cursor: pointer;
+
+   
+    transition: opacity ease-in 20ms;
+
+  }
+
+  /* .chefs   .avatar-single i:hover {
+    opacity: 1;
+    
+  } */
+  
+  

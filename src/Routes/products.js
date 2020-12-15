@@ -12,6 +12,8 @@ routes.get('/recipe/create', product.create)
 routes.get('/recipe/:id/edit', product.edit)
 routes.get('/recipe/:id', product.show)
 
+// routes.get('/recipe/search', search.index)
+
 
 
 

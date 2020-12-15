@@ -1,0 +1,26 @@
+
+{% extends "layout.njk" %}
+
+{% block content %}
+  <div class="container container_margin">
+
+    
+    <section class="content-form">
+      <form action="/admin/users" method="post" class="form" 
+        enctype="multipart/form-data"
+      >
+      <header class="header_form">
+        <h2>Criando  chef</h2>
+        <button class="button">Salvar  Chefe</button>
+      </header>
+      
+        {% include "user/fields.njk" %}
+    </form>
+    </section>
+
+  </div>
+  
+{% endblock %}
+
+ 
+

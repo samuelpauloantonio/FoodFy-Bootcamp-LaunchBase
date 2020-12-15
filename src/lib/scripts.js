@@ -67,6 +67,8 @@ const PhotosUpload = {
             }
 
             reader.readAsDataURL(file)
+
+           
         
         })
     },

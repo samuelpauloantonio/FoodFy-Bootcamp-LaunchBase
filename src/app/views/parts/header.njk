@@ -8,7 +8,13 @@
 
 
      <form class="search " action="/admin/recipe/search" method="get">
-       <input type="text" name="filter" {%if search.term %} value={{search.term}} {% endif %}>
+       <input 
+       type="text" 
+       name="filter" 
+       placeholder="Buscar Receitas"
+       {%if search.term %} 
+       value = {{search.term}}
+        {% endif %}>
 
        <i class="material-icons">
          search
@@ -32,7 +38,7 @@
            <a href="/sobre">Sobre</a>
          </li>
          <li>
-           <a href="/accounts">
+           <a href="/admin/chefs">
              <i class="material-icons">account_circle</i>
              Minha conta
            </a>

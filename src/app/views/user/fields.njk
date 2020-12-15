@@ -1,0 +1,39 @@
+<div class="chefs fieldsproducts">
+
+  
+
+    <div class="products_info">
+
+        <h2>Avatar</h2>
+
+        <div class="photo">
+
+            <input type="file"
+             name="photos" 
+             class="photo-inputUSer" 
+              accept="image/*"
+              value = "{{files.name}}"
+            onchange="PhotosUploadUsers.FilesInputUser(event)"
+            
+            >
+
+            <div class="priview-photo-users"> 
+            <p>Escolher foto</p>
+            <div class="avatar-single" id="{{image.id}}">
+                <img src="{{image.src}}" alt="{{image.name}}">
+                <i class="material-icons" onclick="PhotosUploadUsers.removeOldPhotos(event)">close </i>
+            </div>
+            <input type="hidden" name="removed_files">
+            </div>
+        </div>
+
+       
+    </div>
+
+    <div class="products_info">
+        <h2>Nome</h2>
+        <input type="text" name="name" placeholder="Nome do Produto" value="{{product.name}}" id="">
+    </div>
+
+    
+</div><!-- fields -->
